@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.bookstore.beans.Book;
-import com.bookstore.util.Constants;
 
 @Service("bookService")
 public class BookService {
@@ -15,11 +14,11 @@ public class BookService {
 	static int seq = 100;
 
 	static {
-		books.add(new Book(1, "Sorcers Stone", Constants.ROWLINGS, "alsdjfoiaf"));
-		books.add(new Book(13, "Dune", Constants.FRANK, "alsdjfoiaf"));
-		books.add(new Book(15, "Life According to Og the Frog", Constants.BETTY, "alsdjfoiaf"));
-		books.add(new Book(20, "IT", Constants.KING, "alsdjfoiaf"));
-		books.add(new Book(20, "The Hobbit", Constants.TOLKIEN, "kdkjdfsiao9430q"));
+		books.add(new Book(1, "Sorcers Stone", 1, "alsdjfoiaf"));
+		books.add(new Book(13, "Dune", 2, "alsdjfoiaf"));
+		books.add(new Book(15, "Life According to Og the Frog", 3, "alsdjfoiaf"));
+		books.add(new Book(20, "IT", 4, "alsdjfoiaf"));
+		books.add(new Book(20, "The Hobbit", 5, "kdkjdfsiao9430q"));
 	}
 
 	public List<Book> getAll(){
@@ -27,6 +26,8 @@ public class BookService {
 	}
 
 	public Book getById(int id) {
+		System.out.println("This is the id " + id);
+		
 		return books.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
 	}
 
@@ -55,7 +56,7 @@ public class BookService {
 				if (s.getId() == id) {
 					s.setIsbn(book.getIsbn());
 					s.setName(book.getName());
-					s.setAuthor(book.getAuthor());
+					s.setAuthor_id(book.getAuthor_id());
 					return s;
 				}
 			}

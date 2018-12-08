@@ -30,12 +30,12 @@ public class AuthorService {
 		return authors.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
 	}
 
-	public Author findByAuthorname(String authorname) {
-		return authors.stream().filter(t -> t.getName().equalsIgnoreCase(authorname)).findFirst().orElse(null);
+	public Author getByAuthorName(String name) {
+		return authors.stream().filter(t -> t.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
 	}
 
 	public Author addAuthor(Author author) {
-		Author found = findByAuthorname(author.getName());
+		Author found = getByAuthorName(author.getName());
 		if (found == null) {
 			author.setId(seq++);
 			authors.add(author);
