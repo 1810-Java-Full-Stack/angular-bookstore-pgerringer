@@ -10,6 +10,7 @@ import { Book } from 'src/app/models/Book';
 })
 export class BookComponent implements OnInit {
   public book: Book;
+  public id: string;
   
   constructor( 
     public route: ActivatedRoute,
@@ -17,7 +18,10 @@ export class BookComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.book = this.service.getBookByName(this.route.snapshot.paramMap.get("book"));
+    this.id = this.route.snapshot.paramMap.get('book');
+    this.service.getBookByID(this.id).subscribe(
+      (b) =>  { this.book = b; }
+    );
   }
 
 }

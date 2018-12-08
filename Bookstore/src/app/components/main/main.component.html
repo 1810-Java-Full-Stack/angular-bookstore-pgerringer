@@ -1,7 +1,11 @@
+<div *ngIf="this.bookList">
+
 <div>
 <ul>
   <li *ngFor="let book of bookList">
-    <a routerLink="/book/{{book.name}}">{{ book.name }}</a>
+    <a routerLink="/book/{{book.id}}">{{ book.name }}</a>
   </li>
 </ul>
+</div>
+
 </div>
