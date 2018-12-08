@@ -1,7 +1,11 @@
 <div *ngIf="this.author!=null">
-<div>
-{{ this.author.name }} <br>
-<br>
-{{ this.author.bio }}
-</div>
+    <div class="jumbotron">
+        <h1 class="display-4">{{ this.author.name }} </h1>
+        <hr class="my-4">
+        <div class="input-group">
+            <div class="input-group-text">Bio</div>
+            <textarea class="form-control" aria-label="With textarea" [(ngModel)]="this.author.bio"></textarea>
+        </div>
+   </div>
+    <button type="button" (click)="update()" class="btn btn-outline-primary">Update</button>
 </div>

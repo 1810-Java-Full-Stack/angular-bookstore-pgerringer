@@ -10,17 +10,26 @@ import { Author } from 'src/app/models/Author';
 })
 export class AuthorComponent implements OnInit {
   public author: Author;
-  public name: string;
+  public id: string;
 
   constructor(
-    public service: MainService, 
+    public service: MainService,
     public route: ActivatedRoute ) { }
 
   ngOnInit() {
-    this.name = this.route.snapshot.paramMap.get('author');
-    this.service.getAuthorByName(this.name).subscribe(
-      (a) =>  { this.author = a; }
+    this.id = this.route.snapshot.paramMap.get('author');
+    this.service.getAuthorByID(this.id).subscribe(
+      (a) =>  {
+        this.author = a;
+      }
     );
   }
 
+  update() {
+    this.service.updateAuthor(this.author).subscribe(
+      (a) =>  {
+        this.author = a;
+      }
+    );
+  }
 }

@@ -1,8 +1,12 @@
 <div *ngIf="this.book!=null">
-<div>
-{{ this.book.name }} <br>
-<br>
-AUTHOR: <a routerLink="/author/{{book.author}}">{{ this.book.author }}</a><br>
-ISBN: {{ this.book.isbn }}
-</div>
+    <div *ngIf="this.author!=null">
+        <div class="jumbotron">
+            <h1 class="display-4">{{ this.book.name }} </h1>
+            <hr class="my-4">
+           
+            AUTHOR: <a routerLink="/author/{{author.id}}">{{ this.author.name }}</a><br>
+            ISBN:<span><input type="text" class="form-control" [(ngModel)]="this.book.isbn"></span>
+        </div>
+        <button type="button" (click)="update()" class="btn btn-outline-primary">Update</button>
+    </div>
 </div>
