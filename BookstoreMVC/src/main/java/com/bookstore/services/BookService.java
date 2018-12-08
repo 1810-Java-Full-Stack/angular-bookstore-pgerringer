@@ -18,7 +18,11 @@ public class BookService {
 		books.add(new Book(13, "Dune", 2, "alsdjfoiaf"));
 		books.add(new Book(15, "Life According to Og the Frog", 3, "alsdjfoiaf"));
 		books.add(new Book(20, "IT", 4, "alsdjfoiaf"));
-		books.add(new Book(20, "The Hobbit", 5, "kdkjdfsiao9430q"));
+		books.add(new Book(25, "The Hobbit", 5, "kdkjdfsiao9430q"));
+		books.add(new Book(35, "Lord of the Rings: The Fellowship of the Ring", 5, "2123-12123"));
+		books.add(new Book(45, "Lord of the Rings: The Two Towers", 5, "453"));
+		books.add(new Book(55, "Lord of the Rings: The Return of the King", 5, "d3"));
+		books.add(new Book(65, "Lord of the Flies", 6, "sfssdfsd"));
 	}
 
 	public List<Book> getAll(){

@@ -20,6 +20,9 @@ public class AuthorService {
 		authors.add(new Author(2, Constants.FRANK, "The sleeper has awaken."));
 		authors.add(new Author(3, Constants.BETTY, "I wrote something about a frog.")); 
 		authors.add(new Author(4, Constants.KING, "I'm scared of the dark."));
+		authors.add(new Author(5, Constants.TOLKIEN, "Only ring I have is in my tub."));
+		authors.add(new Author(6, Constants.GOLDING, "Where is my Raid?"));
+		
 	}
 
 	public List<Author> getAll(){
